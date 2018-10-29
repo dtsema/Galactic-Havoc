@@ -296,8 +296,9 @@ public class Game extends Canvas implements Runnable {
 		
 		
 		for (int i = 0; i < hiscores.length; i++){
+			if (!hiscores[i].equals("")){
 			hiscoresInt.add(Integer.parseInt(hiscores[i]));
-			
+			}
 		}
 		
 		 for (int i = 0; i < hiscoresInt.size()-1; i++)
@@ -313,7 +314,7 @@ public class Game extends Canvas implements Runnable {
 	
 	private static String readTextDoc() throws IOException{
 		String everything = null;
-		try(BufferedReader br = new BufferedReader(new FileReader("scores.txt"))) {
+		try(BufferedReader br = new BufferedReader(new FileReader("src/game/scores.txt"))) {
 			StringBuilder sb = new StringBuilder();
 			String line = br.readLine();
 
@@ -446,7 +447,7 @@ public class Game extends Canvas implements Runnable {
 
 	private void updateScores(){
 		if (HealthBar.score > hiscoresInt.get(hiscoresInt.size()-1)){
-			File log = new File("scores.txt");
+			File log = new File("src/game/scores.txt");
 			try{
 				BufferedReader reader = new BufferedReader(new FileReader(log));
 				removeLine(reader, log, Integer.toString(hiscoresInt.get(hiscoresInt.size()-1)));
@@ -471,7 +472,7 @@ public class Game extends Canvas implements Runnable {
 	}
 	
 	public static void removeLine(BufferedReader br , File f,  String Line) throws IOException{
-	    File temp = new File("temp.txt");
+	    File temp = new File("src/game/temp.txt");
 	    BufferedWriter bw = new BufferedWriter(new FileWriter(temp));
 	    String removeID = Line;
 	    String currentLine;
