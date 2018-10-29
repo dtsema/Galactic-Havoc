@@ -12,6 +12,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -314,7 +316,8 @@ public class Game extends Canvas implements Runnable {
 	
 	private static String readTextDoc() throws IOException{
 		String everything = null;
-		try(BufferedReader br = new BufferedReader(new FileReader("src/game/scores.txt"))) {
+		InputStream is = ResourceLoader.load("scores/scores.txt");
+		try(BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"))) {
 			StringBuilder sb = new StringBuilder();
 			String line = br.readLine();
 
@@ -447,12 +450,12 @@ public class Game extends Canvas implements Runnable {
 
 	private void updateScores(){
 		if (HealthBar.score > hiscoresInt.get(hiscoresInt.size()-1)){
-			File log = new File("src/game/scores.txt");
+			InputStream log = ResourceLoader.load("scores/scores.txt");
 			try{
-				BufferedReader reader = new BufferedReader(new FileReader(log));
-				removeLine(reader, log, Integer.toString(hiscoresInt.get(hiscoresInt.size()-1)));
+				BufferedReader reader = new BufferedReader(new InputStreamReader(log));
+				removeLine(reader, Integer.toString(hiscoresInt.get(hiscoresInt.size()-1)));
 	
-				FileWriter writer = new FileWriter(log, true);
+				FileWriter writer = new FileWriter(log.toString(), true);
 				BufferedWriter reader1 = new BufferedWriter(writer);
 
 				reader1.write(Integer.toString(HealthBar.score));
@@ -471,9 +474,9 @@ public class Game extends Canvas implements Runnable {
 		else asteroidCoolDown--;
 	}
 	
-	public static void removeLine(BufferedReader br , File f,  String Line) throws IOException{
-	    File temp = new File("src/game/temp.txt");
-	    BufferedWriter bw = new BufferedWriter(new FileWriter(temp));
+	public static void removeLine(BufferedReader br,  String Line) throws IOException{
+	    InputStream temp = ResourceLoader.load("scores/temp.txt");
+	    BufferedWriter bw = new BufferedWriter(new FileWriter(temp.toString()));
 	    String removeID = Line;
 	    String currentLine;
 	    boolean off = false;
