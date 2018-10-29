@@ -45,7 +45,7 @@ public class ShopButton extends GameObject implements MouseListener {
 	}
 	
 	private void upgradeShip(){
-		if (upgradeType == "shipUpgrade1" && pressed  && HealthBar.score>= 0){
+		if (upgradeType == "shipUpgrade1" && pressed  && HealthBar.score>= 100){
 			upgrade=true;
 			if (deleteOldShopButton){
 				Player.basic=false;
@@ -58,7 +58,7 @@ public class ShopButton extends GameObject implements MouseListener {
 			}
 		}
 			
-		if (upgradeType == "shipUpgrade2" && pressed  && HealthBar.score>= 0){
+		if (upgradeType == "shipUpgrade2" && pressed  && HealthBar.score>= 300){
 			upgrade=true;
 			if (deleteOldShopButton){
 				Player.upgrade1=false;
@@ -73,7 +73,7 @@ public class ShopButton extends GameObject implements MouseListener {
 			}
 		}
 			
-		if (upgradeType == "shipUpgrade3" && pressed  && HealthBar.score>= 0){
+		if (upgradeType == "shipUpgrade3" && pressed  && HealthBar.score>= 700){
 			upgrade=true;
 			if (deleteOldShopButton){
 				Player.upgrade2=false;
@@ -86,7 +86,7 @@ public class ShopButton extends GameObject implements MouseListener {
 			}
 		}
 				
-		if (upgradeType == "shipUpgrade4" && pressed  && HealthBar.score>= 0){
+		if (upgradeType == "shipUpgrade4" && pressed  && HealthBar.score>= 1300){
 			upgrade=true;
 			if (deleteOldShopButton){
 				Player.upgrade3=false;
@@ -99,7 +99,7 @@ public class ShopButton extends GameObject implements MouseListener {
 			}
 		}
 			
-		if (upgradeType == "shipUpgrade5" && pressed  && HealthBar.score>= 0){
+		if (upgradeType == "shipUpgrade5" && pressed  && HealthBar.score>= 1800){
 			upgrade=true;
 			if (deleteOldShopButton){
 				Player.upgrade4=false;
@@ -112,7 +112,7 @@ public class ShopButton extends GameObject implements MouseListener {
 			}
 		}
 			
-		if (upgradeType == "shipUpgrade6" && pressed  && HealthBar.score>= 0){
+		if (upgradeType == "shipUpgrade6" && pressed  && HealthBar.score>= 2600){
 			upgrade=true;
 			if (deleteOldShopButton){
 				Player.upgrade5=false;
@@ -124,7 +124,7 @@ public class ShopButton extends GameObject implements MouseListener {
 				handler.removeObject(this);
 			}
 		}
-		if (upgradeType == "shipUpgrade7" && pressed  && HealthBar.score>= 0){
+		if (upgradeType == "shipUpgrade7" && pressed  && HealthBar.score>= 4000){
 			upgrade=true;
 			if (deleteOldShopButton){
 				Player.upgrade6=false;
@@ -136,7 +136,7 @@ public class ShopButton extends GameObject implements MouseListener {
 				handler.removeObject(this);
 			}
 		}
-		if (upgradeType == "shipUpgrade8" && pressed  && HealthBar.score>= 0){
+		if (upgradeType == "shipUpgrade8" && pressed  && HealthBar.score>= 6000){
 			upgrade=true;
 			if (deleteOldShopButton){
 				ShopButton.gem = true;
