@@ -152,19 +152,6 @@ public class Game extends Canvas implements Runnable {
 			hiscoresImg = ImageIO.read( ResourceLoader.load("menu/hiscores.png"));
 		} catch (Exception e1) {
 			e1.printStackTrace();
-			File log = new File("log.txt");
-			FileWriter writer;
-			
-			try {
-				writer = new FileWriter(log, true);
-				BufferedWriter reader = new BufferedWriter(writer);
-				reader.write(e1.toString() + " 1");
-				reader.close();
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
-			
 		}
 	}
 	
@@ -180,19 +167,6 @@ public class Game extends Canvas implements Runnable {
 		}
 		catch (Exception e1) {
 			e1.printStackTrace();
-			File log = new File("log.txt");
-			FileWriter writer;
-			
-			try {
-				writer = new FileWriter(log, true);
-				BufferedWriter reader = new BufferedWriter(writer);
-				reader.write(e1.toString() + " 2");
-				reader.close();
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
-			
 		}
 	}
 	
@@ -204,24 +178,9 @@ public class Game extends Canvas implements Runnable {
 		    
 		    buttonBuy = ImageIO.read( ResourceLoader.load("button/defButtonBuy.png"));
 		    buttonBuyPressed = ImageIO.read( ResourceLoader.load("button/defButtonPressedBuy.png"));
-		   
-		    
 		}
 		catch (Exception e1) {
 			e1.printStackTrace();
-			File log = new File("log.txt");
-			FileWriter writer;
-			
-			try {
-				writer = new FileWriter(log, true);
-				BufferedWriter reader = new BufferedWriter(writer);
-				reader.write(e1.toString()+ " 3");
-				reader.close();
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
-			
 		}
 		
 		menuHandler.addObject(new MenuButton("     Start", 0, this, ID.MenuButton, 0, 0, gameHandler));
@@ -245,19 +204,6 @@ public class Game extends Canvas implements Runnable {
 			planet3 = ImageIO.read( ResourceLoader.load("planets/planet3.png"));
 		}catch (Exception e1) {
 			e1.printStackTrace();
-			File log = new File("log.txt");
-			FileWriter writer;
-			
-			try {
-				writer = new FileWriter(log, true);
-				BufferedWriter reader = new BufferedWriter(writer);
-				reader.write(e1.toString()+ " 4");
-				reader.close();
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
-			
 		}
 		planetlist = new ArrayList<Image>();
 		planetlist.add(planet);
@@ -280,19 +226,6 @@ public class Game extends Canvas implements Runnable {
 			asteroids.add(asteroid3);
 		}catch (Exception e1) {
 			e1.printStackTrace();
-			File log = new File("log.txt");
-			FileWriter writer;
-			
-			try {
-				writer = new FileWriter(log, true);
-				BufferedWriter reader = new BufferedWriter(writer);
-				reader.write(e1.toString()+ " 5");
-				reader.close();
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
-			
 		}
 	}
 	
@@ -310,19 +243,6 @@ public class Game extends Canvas implements Runnable {
 			
 		}catch (Exception e1) {
 			e1.printStackTrace();
-			File log = new File("log.txt");
-			FileWriter writer;
-			
-			try {
-				writer = new FileWriter(log, true);
-				BufferedWriter reader = new BufferedWriter(writer);
-				reader.write(e1.toString()+ " 6");
-				reader.close();
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
-			
 		}
 	}
 	
@@ -334,19 +254,6 @@ public class Game extends Canvas implements Runnable {
 			
 		}catch (Exception e1) {
 			e1.printStackTrace();
-			File log = new File("log.txt");
-			FileWriter writer;
-			
-			try {
-				writer = new FileWriter(log, true);
-				BufferedWriter reader = new BufferedWriter(writer);
-				reader.write(e1.toString()+ " 7");
-				reader.close();
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
-			
 		}
 	}
 	
@@ -358,19 +265,6 @@ public class Game extends Canvas implements Runnable {
 			star3 = ImageIO.read( ResourceLoader.load("stars/star12.png"));
 		} catch (Exception e1) {
 			e1.printStackTrace();
-			File log = new File("log.txt");
-			FileWriter writer;
-			
-			try {
-				writer = new FileWriter(log, true);
-				BufferedWriter reader = new BufferedWriter(writer);
-				reader.write(e1.toString()+ " 8");
-				reader.close();
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
-			
 		}
 		starlist = new ArrayList<Image>();
 		starlist.add(star);
@@ -386,18 +280,7 @@ public class Game extends Canvas implements Runnable {
 		}
 		catch (Exception e1) {
 			e1.printStackTrace();
-			File log = new File("log.txt");
-			FileWriter writer;
-			
-			try {
-				writer = new FileWriter(log, true);
-				BufferedWriter reader = new BufferedWriter(writer);
-				reader.write(e1.toString()+ " 9");
-				reader.close();
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}}
+		}
 	}
 	
 	private void getStoredScores(){
@@ -406,19 +289,6 @@ public class Game extends Canvas implements Runnable {
 	scores = readTextDoc();
 		} catch (Exception e1) {
 			e1.printStackTrace();
-			File log = new File("log.txt");
-			FileWriter writer;
-			
-			try {
-				writer = new FileWriter(log, true);
-				BufferedWriter reader = new BufferedWriter(writer);
-				reader.write(e1.toString() + " 10");
-				reader.close();
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
-			
 		}
 		hiscores = new String[] {};
 		hiscoresInt = new ArrayList<Integer>();
@@ -705,11 +575,7 @@ public class Game extends Canvas implements Runnable {
 		g.drawString(Integer.toString(hiscoresInt.get(9)), 590, 460);
 	}
 	
-	public static void main(String args[]) throws IOException{
-		
-
-		
+	public static void main(String args[]) throws IOException{	
 		new Game();
-		
 	}
 }
